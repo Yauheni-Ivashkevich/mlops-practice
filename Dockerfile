@@ -23,7 +23,7 @@ COPY --from=builder /usr/local/lib/python3.10/site-packages /usr/local/lib/pytho
 COPY --from=builder /usr/local/bin /usr/local/bin
 
 # Копируем скачанную модель и код нашего API
-COPY --from=builder /build/model ./model
+COPY --from=builder /build/model_onnx ./model_onnx
 COPY app.py .
 
 # Указываем порт, который приложение слушает внутри контейнера
