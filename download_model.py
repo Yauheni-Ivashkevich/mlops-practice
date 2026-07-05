@@ -1,7 +1,7 @@
 import os
 from transformers import pipeline
 
-MODEL_NAME = "distilbert-base-uncased-emotion"
+MODEL_NAME = "bhadresh-savani/distilbert-base-uncased-emotion"
 SAVE_PATH = "./model"
 
 print(f"Скачивание модели {MODEL_NAME} с Hugging Face...")
