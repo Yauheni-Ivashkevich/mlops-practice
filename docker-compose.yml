@@ -1,0 +1,19 @@
+version: '3.8'
+
+services:
+  # Мы даем имя нашему сервису (может быть любым)
+  emotion-api:
+    # Указываем, как собирать образ, если его нет локально
+    build:
+      context: .
+      dockerfile: Dockerfile
+    # Задаем имя контейнера, как при флаге --name
+    container_name: ml-api-compose
+    # Пробрасываем порты (порты на Маке : порты внутри контейнера)
+    ports:
+      - "8000:8000"
+    # Настройка перезапуска: если контейнер упадет из-за ошибки, Docker сам его поднимет
+    restart: always
+    # Задаем переменные окружения (помнишь os.getenv в app.py?)
+    environment:
+      - MODEL_PATH=./model_onnx
